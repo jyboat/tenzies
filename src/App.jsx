@@ -131,7 +131,7 @@ export default function App() {
         {diceElements}
       </div>
       <div id="highscore">
-        {localStorage.getItem('highscore') == null ? "Set a highscore!" : `Highscore to beat: ${localStorage.getItem('highscore')}`}
+        {localStorage.getItem('highscore') == null ? "Be the first to set a highscore!" : `Highscore to beat: ${localStorage.getItem('highscore')}`}
       </div>
 
       <button id="roll-btn" onClick={rollDice}>{tenzies ? "New Game" : "Roll"}</button>
