@@ -117,7 +117,7 @@ export default function App() {
 
   return (
     <div id="container">
-      {tenzies && <Confetti width={window.innerWidth} height={720} />}
+      {tenzies && <Confetti width={window.innerWidth} height={window.innerHeight - 1} />}
 
       <div id="text-container">
         <p id="title">Tenzies</p>
