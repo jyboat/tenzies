@@ -3,10 +3,6 @@ import Die from "./components/Die"
 import { nanoid } from 'nanoid'
 import Confetti from "react-confetti"
 
-// clean up code
-// make dice face
-// integrate dice face to app
-
 export default function App() {
 
   const [dice, setDice] = React.useState(generateAllDice())
@@ -31,7 +27,6 @@ export default function App() {
       alert('Congrats on finding the secret interaction 😉')
       window.location.reload()
     }
-    console.log(isActive)
   }, [second])
 
   React.useEffect(() => {
