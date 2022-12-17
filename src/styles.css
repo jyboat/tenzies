@@ -50,7 +50,6 @@ body {
     color: #2B283A;
     margin-top: 30px;
     margin-bottom: 20px;
-
 }
 
 #instructions {
@@ -62,7 +61,6 @@ body {
     color: #4A4E74;
     margin-bottom: 40px;
 }
-
 
 #dice-container {
     display: grid;

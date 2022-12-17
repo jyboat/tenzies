@@ -5,6 +5,8 @@ export default function Die(props) {
     }
 
     return (
-        < p id="die-face" style={styles} onClick={props.handleDieClick}> {props.value} </p>
+        <div>
+            <p id="die-face" style={styles} onClick={props.handleDieClick}> {props.value} </p>
+        </div>
     )
 }

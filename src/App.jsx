@@ -58,9 +58,12 @@ export default function App() {
       const currentScore = minute * 60 + second
 
       if (highScore == null && currentScore !== 0) {
+        // first time playing
         localStorage.setItem('highscore', formatHighScore())
       } else if (highScore !== null) {
-        const highScoreInSeconds = highScore.split("")[0] * 60 + highScore.split("")[1] * 60 + highScore.split("")[3] * 10 + highScore.split("")[4] * 1
+        // minutes:seconds. e.g, 12:30
+        const highScoreInSeconds =
+          highScore.split("")[0] * 10 * 60 + highScore.split("")[1] * 60 + highScore.split("")[3] * 10 + highScore.split("")[4] * 1
         if (currentScore < highScoreInSeconds) {
           localStorage.setItem('highscore', formatHighScore())
         }
@@ -91,6 +94,7 @@ export default function App() {
       }))
       setRollCount(oldCount => oldCount + 1)
     } else {
+      // new game
       setTenzies(false)
       setRollCount(0)
       setDice(generateAllDice)
@@ -104,7 +108,6 @@ export default function App() {
     }))
     setIsActive(true);
   }
-
 
   const diceElements = dice.map(die => {
     return <Die key={die.id} value={die.value} handleDieClick={() => handleDieClick(die.id)} isHeld={die.isHeld} />
@@ -126,7 +129,9 @@ export default function App() {
         {diceElements}
       </div>
       <div id="highscore">
-        {localStorage.getItem('highscore') == null ? "Be the first to set a highscore!" : `Highscore to beat: ${localStorage.getItem('highscore')}`}
+        {localStorage.getItem('highscore') == null ?
+          "Be the first to set a highscore!" : `Highscore to beat: ${localStorage.getItem('highscore')}`
+        }
       </div>
 
       <button id="roll-btn" onClick={rollDice}>{tenzies ? "New Game" : "Roll"}</button>
